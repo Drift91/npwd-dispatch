@@ -34,7 +34,7 @@ exp.npwd.onCall(emergencyNumber, async (ctx: OnCallExportCtx) => {
 })
 
 exp.npwd.onMessage(emergencyNumber, async (ctx: OnMessageExportCtx) => {
-  const { phoneNumber } = await exports.npwd.getPlayerData({ source: ctx.source })
+  const { phoneNumber } = await global.exports.npwd.getPlayerData({ source: ctx.source })
   const dispatchers = dispatchService.getAll().filter(val => val.number !== phoneNumber)
 
   if (!dispatchers || !dispatchers.length) {

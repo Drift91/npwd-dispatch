@@ -12,7 +12,7 @@ class DispatchService {
   }
 
   public async newDispatcher(src: number): Promise<void> {
-    const { phoneNumber } = await exports.npwd.getPlayerData({ source: src })
+    const { phoneNumber } = await global.exports.npwd.getPlayerData({ source: src })
     this.dispatchers.set(src, {
       src,
       number: phoneNumber
